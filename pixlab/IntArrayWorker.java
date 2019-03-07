@@ -129,4 +129,14 @@ public class IntArrayWorker
       }
       return largest;
   }
+  
+  public int getColTotal(int col)
+  {
+      int count = 0;
+      for (int[] row : matrix)
+      {
+          count+= row[col];
+      }
+      return count;
+  }
 }
