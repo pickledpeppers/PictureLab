@@ -138,6 +138,42 @@ public class Picture extends SimplePicture
     } 
   }
   
+  /** Method that mirrors the picture around a 
+    * horizontal mirror in the center of the picture
+    * from top to bottom */
+  public void mirrorHorizontal()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel topPixel = null;
+    Pixel bottomPixel = null;
+    int height = pixels.length;
+    for (int col = 0; col < pixels[0].length; col++)
+    {
+      for (int row = 0; row < height / 2; row++)
+      {
+        topPixel = pixels[row][col];
+        bottomPixel = pixels[height - 1 - row][col];
+        topPixel.setColor(bottomPixel.getColor());
+      }
+    } 
+  }
+  
+  /** Method that mirrors the picture around a 
+    * diagonal mirror in the center of the picture
+    * from leftBottom to rightTop */
+  public void mirrorDiagonal()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    int end = Math.min(pixels.length, pixels[0].length);
+    for (int row = 0; row < end; row++)
+      for (int col = 0; col < row; col++)
+      {
+          Pixel down = pixels[row][col];
+          Pixel up = pixels[col][row];
+          up.setColor(down.getColor());
+      } 
+  }
+  
   /** Mirror just part of a picture of a temple */
   public void mirrorTemple()
   {
