@@ -198,6 +198,35 @@ public class Picture extends SimplePicture
     }
   }
   
+  /** Mirror just part of a picture of a snowman */
+  public void mirrorSnowman()
+  {
+      int mirrorPoint = 194;
+      Pixel topPixel = null;
+      Pixel bottomPixel = null;
+      int count = 0;
+      Pixel[][] pixels = this.getPixels2D();
+      
+      // loop through the columns 
+      for (int col = 100; col < 300; col++)
+      {
+          // loop from 160 to mirror point
+          for (int row = 160; row < mirrorPoint; row++)
+          {
+        
+            topPixel = pixels[row][col];      
+            bottomPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+            bottomPixel.setColor(topPixel.getColor());
+
+          }
+      }
+  }
+  
+  /** Mirror just part of a picture of a snowman */
+  public void mirrorSeagull()
+  {//cont
+    }
+  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
@@ -234,14 +263,14 @@ public class Picture extends SimplePicture
   {
     Picture flower1 = new Picture("flower1.jpg");
     Picture flower2 = new Picture("flower2.jpg");
-    this.copy(flower1,0,0);
-    this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
+    this.copy(flower1,0,10);
+    this.copy(flower2,100,20);
+    this.copy(flower1,200,30);
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
+    this.copy(flowerNoBlue,300,40);
+    this.copy(flower1,400,50);
+    this.copy(flower2,500,60);
     this.mirrorVertical();
     this.write("collage.jpg");
   }

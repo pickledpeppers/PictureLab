@@ -61,6 +61,14 @@ public class PictureTester
     temple.explore();
   }
   
+  /** Method to test mirrorSnowman */
+  public static void testMirrorSnowman()
+  {
+    Picture snowman = new Picture("snowman.jpg");
+    snowman.explore();
+    snowman.mirrorSnowman();
+    snowman.explore();
+  }
   /** Method to test the collage method */
   public static void testCollage()
   {
