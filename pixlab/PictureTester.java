@@ -77,6 +77,19 @@ public class PictureTester
     canvas.explore();
   }
   
+  /**Method to test copy picture**/
+  public static void testCopy()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    Picture swan = new Picture("swan.jpg");
+    canvas.copy(swan,10,10,200,100,250,200);
+    canvas.copy(swan,70,10,200,100,250,200);
+    canvas.copy(swan,130,10,200,100,250,200);
+    canvas.mirrorVertical();
+    canvas.explore();
+               
+  }
+  
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
