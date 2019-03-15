@@ -80,13 +80,19 @@ public class PictureTester
   /**Method to test copy picture**/
   public static void testCopy()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture ocean = new Picture("beach.jpg");
+    Picture louisXVI = new Picture("snowman.jpg");
+    ocean.copy(louisXVI, 10, 10, 60, 160, 180, 230);
+    //Picture flower = new Picture("flower1.jpg");
+    //ocean.copy(flower, 50, 100);
+    ocean.explore();
+      /*Picture canvas = new Picture("640x480.jpg");
     Picture swan = new Picture("swan.jpg");
     canvas.copy(swan,10,10,200,100,250,200);
     canvas.copy(swan,70,10,200,100,250,200);
     canvas.copy(swan,130,10,200,100,250,200);
     canvas.mirrorVertical();
-    canvas.explore();
+    canvas.explore();*/
                
   }
   
